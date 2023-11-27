@@ -1,0 +1,12 @@
+{
+  "name": "urg.com",
+  "description": "Personal Website",
+  "version": "1.0",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

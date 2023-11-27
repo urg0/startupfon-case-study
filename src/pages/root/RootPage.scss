@@ -1,0 +1,23 @@
+.root-page-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f5ed;
+  padding: 20px;
+
+  .main-navigation {
+    height: 10%;
+    padding-bottom: 20px;
+  }
+  .page-content {
+    height: 85%;
+  }
+  .footer {
+    height: 5%;
+  }
+}
+
+.light {
+  /* background-color: #f8f5ed; */
+}

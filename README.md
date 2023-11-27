@@ -1,1 +1,2 @@
-# startupfon-case-study
+# react-setup
+react project setup

@@ -1,0 +1,26 @@
+.top-bar-user-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 15px;
+  .user-wrapper {
+    display: flex;
+    align-items: center;
+    .user-full-name {
+      color: #d36330;
+    }
+    .user-profile-photo {
+      width: 70px;
+      border-radius: 50%;
+      margin-left: 10px;
+      cursor: pointer;
+      &.open {
+        transform: scale(1.1);
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
