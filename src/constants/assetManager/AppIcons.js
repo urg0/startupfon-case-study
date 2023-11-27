@@ -17,7 +17,9 @@ import AppIcon from "@assets/icons/app.svg";
 import SettingsIcon from "@assets/icons/settings.svg";
 import SupportIcon from "@assets/icons/support.svg";
 import Logout from "@assets/icons/logout.svg";
-
+import Bookmark from "@assets/icons/bookmark-empty.svg";
+import Bookmark2 from "@assets/icons/bookmark-filled.svg";
+import Search from "@assets/icons/search.svg";
 class AppIcons {
   static GetIcon(type) {
     switch (type) {
@@ -59,6 +61,12 @@ class AppIcons {
         return SupportIcon;
       case "logout":
         return Logout;
+      case "bookmark":
+        return Bookmark;
+      case "bookmark2":
+        return Bookmark2;
+      case "search":
+        return Search;
       default:
         return null;
     }
