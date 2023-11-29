@@ -12,11 +12,12 @@ import AppIcons from "@root/constants/assetManager/AppIcons";
 
 import "@pages/news/all-news/AllNews.scss";
 import SearchNoResult from "@components/news/search-no-result/SearchNoResult";
+import SkeletonNew from "@components/ui/skeleton/SkeletonNew";
 
 const SearchIcon = AppIcons.GetIcon("search");
 
 const AllNews = () => {
-  const { data: allNews } = useQuery({
+  const { data: allNews, isPending } = useQuery({
     queryKey: ["news"],
     queryFn: () => fetchData(eventsUrl),
   });
@@ -75,6 +76,8 @@ const AllNews = () => {
         {filteredNews?.length === 0 && (
           <SearchNoResult resetSearchInput={resetSearchInputHandler} />
         )}
+        {isPending &&
+          Array.from({ length: 4 }, (_, index) => <SkeletonNew key={index} />)}
       </div>
     </div>
   );

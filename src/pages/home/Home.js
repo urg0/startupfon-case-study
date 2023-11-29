@@ -9,6 +9,7 @@ import Title from "@components/ui/title/Title";
 
 import "@pages/home/Home.scss";
 import NewsItem from "@components/news/news-item/NewsItem";
+import SkeletonNew from "@components/ui/skeleton/SkeletonNew";
 
 const Home = () => {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
@@ -32,19 +33,20 @@ const Home = () => {
       className={darkMode ? "home-page-container" : "home-page-container light"}
     >
       <Title title="Latest News" />
-      {isPending && <div>Loading...</div>}
-      {isError && <div>error</div>}
-      {/* <div className="news-list">
-        {topNews &&
+      <div className="news-list">
+        {/*   {topNews &&
           topNews.map(
             (newsItem) => (
               <NewsItem
-                key={newsItem.id}
-                newsItem={newsItem}
+              key={newsItem.id}
+              newsItem={newsItem}
               />
-            )
-          )}
-      </div> */}
+              )
+            )} */}
+        {isPending &&
+          Array.from({ length: 4 }, (_, index) => <SkeletonNew key={index} />)}
+        {isError && <div>error</div>}
+      </div>
     </div>
   );
 };

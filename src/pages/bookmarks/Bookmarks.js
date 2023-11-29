@@ -6,20 +6,19 @@ import { eventsUrl, fetchData } from "@utils/api.service";
 import Title from "@components/ui/title/Title";
 import HorizontalNewsItem from "@components/news/news-item/HorizontalNewsItem";
 import NoBookmarksMessage from "./no-bookmarks-message/NoBookmarksMessage";
+import SkeletonNew from "@components/ui/skeleton/SkeletonNew";
 
 import "@pages/bookmarks/Bookmarks.scss";
 
 const Bookmarks = () => {
-  const { data: allNews } = useQuery({
-    queryKey: ["news"],
+  const { data: allNews, isPending } = useQuery({
+    queryKey: ["bookmarkedNews"],
     queryFn: () => fetchData(eventsUrl),
   });
 
   const bookmarkedNews = allNews?.filter(
     (newItem) => newItem.isBookmarked === true
   );
-
-  console.log(bookmarkedNews);
 
   return (
     <div className="bookmarks-container">
@@ -30,6 +29,8 @@ const Bookmarks = () => {
             <HorizontalNewsItem key={newsItem.id} newsItem={newsItem} />
           ))}
         {bookmarkedNews?.length === 0 && <NoBookmarksMessage />}
+        {isPending &&
+          Array.from({ length: 4 }, (_, index) => <SkeletonNew key={index} />)}
       </div>
     </div>
   );
