@@ -20,6 +20,18 @@ import Logout from "@assets/icons/logout.svg";
 import Bookmark from "@assets/icons/bookmark-empty.svg";
 import Bookmark2 from "@assets/icons/bookmark-filled.svg";
 import Search from "@assets/icons/search.svg";
+import Clap from "@assets/icons/clap.svg";
+import Message from "@assets/icons/message.svg";
+import Share from "@assets/icons/share.svg";
+import More from "@assets/icons/more.svg";
+import Back from "@assets/icons/back.svg";
+import Close from "@assets/icons/close.svg";
+import Linkedin from "@assets/icons/linkedin.svg";
+import Github from "@assets/icons/github.svg";
+import ComputerDead from "@assets/icons/computer-dead.svg";
+import ComputerWarning from "@assets/icons/computer-warning.svg";
+import Clear from "@assets/icons/clear.svg";
+
 class AppIcons {
   static GetIcon(type) {
     switch (type) {
@@ -67,6 +79,29 @@ class AppIcons {
         return Bookmark2;
       case "search":
         return Search;
+      case "clap":
+        return Clap;
+      case "message":
+        return Message;
+      case "share":
+        return Share;
+      case "more":
+        return More;
+      case "back":
+        return Back;
+      case "close":
+        return Close;
+      case "clear":
+        return Clear;
+      case "github":
+        return Github;
+      case "linkedin":
+        return Linkedin;
+      case "computer-dead":
+        return ComputerDead;
+      case "computer-warning":
+        return ComputerWarning;
+
       default:
         return null;
     }

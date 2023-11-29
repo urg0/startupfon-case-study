@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchNews } from "@utils/api.service";
+import { eventsUrl, fetchData, fetchNews } from "@utils/api.service";
 
 import { DarkModeContext } from "@root/context/DarkModeContext";
 
@@ -20,7 +20,7 @@ const Home = () => {
     error,
   } = useQuery({
     queryKey: ["news"], //IMPORTANT:for caching
-    queryFn: fetchNews, //you need to write your own fetch function, react query does not comes with built in one.
+    queryFn: () => fetchData(eventsUrl), //you need to write your own fetch function, react query does not comes with built in one.
     staleTime: 0,
     // gcTime: 1000 , for the clear cache
   });
@@ -37,17 +37,10 @@ const Home = () => {
       {/* <div className="news-list">
         {topNews &&
           topNews.map(
-            ({ id, title, date, text, image, fullName, job, avatar }) => (
+            (newsItem) => (
               <NewsItem
-                key={id}
-                id={id}
-                title={title}
-                date={date}
-                text={text}
-                image={image}
-                fullName={fullName}
-                job={job}
-                avatar={avatar}
+                key={newsItem.id}
+                newsItem={newsItem}
               />
             )
           )}

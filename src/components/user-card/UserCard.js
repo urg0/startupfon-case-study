@@ -4,7 +4,7 @@ import useClickOutside from "@hooks/useClickOutside";
 
 import DropdownMenu from "@components/ui/dropdown-menu/DropdownMenu";
 
-import test from "@assets/images/test.jpeg";
+import test from "@assets/images/test.png";
 
 import "@components/user-card/UserCard.scss";
 
@@ -19,7 +19,6 @@ const UserCard = () => {
   return (
     <div className="top-bar-user-container">
       <div className="user-wrapper">
-        {/* <div className="user-full-name">Ulaş Rotinda Güler</div> */}
         <img
           src={test}
           alt="user-profile-photo"

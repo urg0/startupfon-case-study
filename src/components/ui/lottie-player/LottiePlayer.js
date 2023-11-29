@@ -1,15 +1,20 @@
-/* eslint-disable */
+import Lottie from "react-lottie";
 
-import Lottie from 'react-lottie';
-export default function LottiePlayer({ animationData, style, loop = true, autoplay = true }) {
-    const defaultOptions = {
-        loop: loop,
-        autoplay: autoplay,
-        animationData: animationData,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-        }
-    };
+export default function LottiePlayer({
+  animationData,
+  style,
+  loop = true,
+  autoplay = true,
+  speed = 1,
+}) {
+  const defaultOptions = {
+    loop: loop,
+    autoplay: autoplay,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
-    return <Lottie options={defaultOptions} style={style} />;
+  return <Lottie options={defaultOptions} speed={speed} style={style} />;
 }

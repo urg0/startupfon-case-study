@@ -12,7 +12,7 @@ const RootPage = () => {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   return (
-    <div className={"root-page-container"}>
+    <div className="root-page-container">
       <section className="main-navigation">
         <MainNavigation />
       </section>

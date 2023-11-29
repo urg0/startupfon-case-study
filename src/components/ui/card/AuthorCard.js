@@ -1,23 +1,24 @@
 import React from "react";
 
+import { dateFormatter } from "@utils/utils.service";
+
 import "@components/ui/card/AuthorCard.scss";
 
-const AuthorCard = ({ avatar, fullName, job }) => {
+const AuthorCard = ({ date, avatar, fullName, job }) => {
   return (
     <div className="author-card-container">
       <div className="author-container">
         <img className="avatar" src={avatar} alt="new" />
         <div className="author">
           <h4 className="full-name">{fullName}</h4>
-          <p className="job">{job}</p>
+          <span className="job">{job}</span>
         </div>
       </div>
       <span className="about">
         about
         <u className="category">Finance</u>
       </span>
-      <span className="date">•2 April 2023</span>
-      {/* <span className="date">{date}</span> */}
+      <span className="date">•{dateFormatter(date)}</span>
     </div>
   );
 };
