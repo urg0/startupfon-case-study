@@ -5,6 +5,7 @@ import RootPage from "@pages/root/RootPage";
 import Home from "@pages/home/Home";
 import AllNews from "@pages/news/all-news/AllNews";
 import NewsDetails from "@pages/news/news-details/NewsDetails";
+import Bookmarks from "@pages/bookmarks/Bookmarks";
 
 export const AppRouter = () => {
   const elements = useRoutes([
@@ -32,6 +33,10 @@ export const AppRouter = () => {
               element: <NewsDetails />,
             },
           ],
+        },
+        {
+          path: "/bookmarks",
+          element: <Bookmarks />,
         },
       ],
     },
