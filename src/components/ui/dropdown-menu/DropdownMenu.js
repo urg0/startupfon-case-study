@@ -6,7 +6,7 @@ import { ReactSVG } from "react-svg";
 
 import { USER_DROPDOWN_MENU_LINKS } from "@config/navigationConfig";
 
-import test from "@assets/images/test.jpeg";
+import test from "@assets/images/test.png";
 
 import AppIcons from "@root/constants/assetManager/AppIcons";
 import "@components/ui/dropdown-menu/DropdownMenu.scss";
@@ -26,7 +26,7 @@ const DropdownMenu = () => {
       <ul className="navigation-list">
         {USER_DROPDOWN_MENU_LINKS.map((item) => (
           <li key={item.title} className="navigation-item">
-            <Link to={item.path} className="user-link">
+            <Link /* to={item.path} */ className="user-link">
               <ReactSVG
                 className="link-icon"
                 src={AppIcons.GetIcon(item.icon)}

@@ -40,6 +40,25 @@
 }
 
 .blue {
+  background-color: #4a4ab5;
+  border: 1px solid #4a4ab5;
+  color: #f8f5ed;
+  font-size: 13px;
+
+  &:hover {
+    background-color: #4a4ab5cc;
+    border: 1px solid #4a4ab5cc;
+    color: #f8f5ed;
+    .button-icon {
+      fill: #f8f5ed;
+    }
+  }
+  .button-icon {
+    fill: #f8f5ed;
+    margin-right: 10px;
+  }
+}
+/* .blue {
   background-color: inherit;
   border: 1px solid #4a4ab5;
   color: #4a4ab5;
@@ -57,7 +76,7 @@
     fill: #4a4ab5;
     margin-right: 10px;
   }
-}
+} */
 .orange {
   background-color: #d36330;
   border: 1px solid #d36330;

@@ -4,6 +4,7 @@ import { DarkModeContext } from "@root/context/DarkModeContext";
 
 import IconLink from "@components/ui/link/IconLink";
 import Button from "@components/ui/button/Button";
+import UserCard from "@components/user-card/UserCard";
 
 import { getIconPath } from "@utils/navigation.service";
 import { NAVIGATION_LINKS } from "@config/navigationConfig";
@@ -11,7 +12,6 @@ import { NAVIGATION_LINKS } from "@config/navigationConfig";
 import AppImages from "@root/constants/assetManager/AppImages";
 
 import "@components/main-navigation/MainNavigation.scss";
-import UserCard from "@components/user-card/UserCard";
 
 const Logo = AppImages.GetImage("logo");
 
@@ -37,15 +37,9 @@ const MainNavigation = () => {
         <Button
           label="Subscribe for $50"
           icon={getIconPath("dollar")}
-          className="large orange"
+          className="medium orange"
         />
       </nav>
-
-      {/* <Button
-        label="Contact Me"
-        icon={getIconPath("contact")}
-        className="medium blue"
-      /> */}
       <div className="user-card-wrapper">
         <UserCard />
       </div>

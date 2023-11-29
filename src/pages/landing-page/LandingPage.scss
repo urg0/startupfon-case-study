@@ -7,11 +7,18 @@
   justify-content: center;
   background-color: #f8f5ed;
   color: #202020;
+  .memoji {
+    width: 320px;
+    margin-bottom: 32px;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
   .main-title,
   .subtitle {
     font-size: 45px;
     font-weight: 500;
-    margin-bottom: 20px;
   }
   .main-title {
     font-size: 45px;
