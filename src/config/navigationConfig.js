@@ -1,10 +1,10 @@
 export const NAVIGATION_LINKS = [
   { path: "/home", icon: "home", label: "Home" },
   { path: "/all-news", icon: "news", label: "All News" },
-  { path: "/sports-news", icon: "sports", label: "Sports" },
-  { path: "/finance-news", icon: "finance", label: "Finance" },
-  { path: "/travel-news", icon: "travel", label: "Travel" },
-  { path: "/culture", icon: "culture", label: "Culture" },
+  { path: "/news/sports", icon: "sports", label: "Sports" },
+  { path: "/news/finance", icon: "finance", label: "Finance" },
+  { path: "/news/travel", icon: "travel", label: "Travel" },
+  { path: "/news/culture", icon: "culture", label: "Culture" },
   { path: "/weather-forecast", icon: "weather", label: "Weather" },
   { path: "/bookmarks", icon: "bookmarks", label: "Bookmarks" },
 ];

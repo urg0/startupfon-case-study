@@ -6,6 +6,11 @@ import Home from "@pages/home/Home";
 import AllNews from "@pages/news/all-news/AllNews";
 import NewsDetails from "@pages/news/news-details/NewsDetails";
 import Bookmarks from "@pages/bookmarks/Bookmarks";
+import Sports from "@pages/news/categories/sports/Sports";
+import Finance from "@pages/news/categories/finance/Finance";
+import Travel from "@pages/news/categories/travel/Travel";
+import Culture from "@pages/news/categories/culture/Culture";
+import Weather from "@pages/news/categories/weather/Weather";
 
 export const AppRouter = () => {
   const elements = useRoutes([
@@ -33,6 +38,26 @@ export const AppRouter = () => {
               element: <NewsDetails />,
             },
           ],
+        },
+        {
+          path: "/news/sports",
+          element: <Sports />,
+        },
+        {
+          path: "/news/finance",
+          element: <Finance />,
+        },
+        {
+          path: "/news/travel",
+          element: <Travel />,
+        },
+        {
+          path: "/news/culture",
+          element: <Culture />,
+        },
+        {
+          path: "/weather-forecast",
+          element: <Weather />,
         },
         {
           path: "/bookmarks",

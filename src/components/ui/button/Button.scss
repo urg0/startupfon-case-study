@@ -6,6 +6,10 @@
   cursor: pointer;
 }
 
+.disabled {
+  cursor: not-allowed;
+}
+
 .large {
   width: 220px;
   height: 50px;
