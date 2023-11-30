@@ -1,0 +1,15 @@
+.weather-forecast-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .gif {
+    width: 400px;
+    border-radius: 8px;
+    margin-top: 50px;
+  }
+  .coming-soon {
+    font-weight: 500;
+    color: #4a4ab5;
+    margin-top: 16px;
+  }
+}

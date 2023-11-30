@@ -48,6 +48,7 @@ const NewsDetails = () => {
                 avatar={data.avatar}
                 fullName={data.fullName}
                 job={data.job}
+                date={data.date}
               />
             </div>
             <NewsDetailsActions id={_id} isBookmarked={data.isBookmarked} />
