@@ -39,6 +39,8 @@ const AllNews = () => {
     setSearchInput("");
   };
 
+  console.log(allNews);
+
   const filteredNews = allNews?.filter((newsItem) => {
     //OPTIMIZE: What about upper case?
     return (
