@@ -25,7 +25,7 @@ const LandingPage = () => {
         Senior Computer Engineering Student at Bahcesehir University, Front-end
         Developer from Istanbul
       </p>
-      <button className="launch-button" onClick={() => navigate("/home")}>
+      <button className="launch-button" onClick={() => navigate("/all-news")}>
         Start Startupfon Case Study
       </button>
     </div>

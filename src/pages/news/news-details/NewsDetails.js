@@ -7,13 +7,18 @@ import { fetchData } from "@utils/api.service";
 
 import AuthorCard from "@components/ui/card/AuthorCard";
 import NewsDetailsActions from "@components/news/news-details/actions/NewsDetailsActions";
+import SkeletonNew from "@components/ui/skeleton/SkeletonNew";
+import LottiePlayer from "@components/ui/lottie-player/LottiePlayer";
 
 import { ReactSVG } from "react-svg";
 import AppIcons from "@root/constants/assetManager/AppIcons";
+import AppAnimations from "@root/constants/assetManager/AppAnimations";
 
 import "@pages/news/news-details/NewsDetails.scss";
+import ErrorMessage from "@components/ui/error/ErrorMessage";
 
 const BackIcon = AppIcons.GetIcon("back");
+const LoadingAnimation = AppAnimations.getAnimation("loading");
 
 const NewsDetails = () => {
   const { _id } = useParams();
@@ -53,7 +58,7 @@ const NewsDetails = () => {
             </div>
             <NewsDetailsActions id={_id} isBookmarked={data.isBookmarked} />
           </div>
-          {/* IMPORTANT: Weird looking code because of the lack of the perfect api */}
+          {/* IMPORTANT: Weird looking code because of the lack of the perfect api  */}
 
           <p className="news-text">
             {data.text}
@@ -73,6 +78,14 @@ const NewsDetails = () => {
           </p>
         </>
       )}
+      {isPending && (
+        <LottiePlayer
+          animationData={LoadingAnimation}
+          style={{ height: 128, width: 128, marginTop: "13%" }}
+          className="loading-animation"
+        />
+      )}
+      {isError && <ErrorMessage refreshButton={true} />}
     </div>
   );
 };

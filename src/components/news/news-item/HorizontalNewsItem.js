@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 
 import { getIconPath } from "@utils/navigation.service";
-import { addBookmark } from "@utils/api.service";
+import { addBookmark, queryClient } from "@utils/api.service";
 
 import toast, { Toaster } from "react-hot-toast";
 import { TOASTER_DEFAULT_STYLES } from "@root/constants/toasterDefaultStyles";
@@ -20,14 +20,15 @@ const HorizontalNewsItem = ({ newsItem }) => {
 
   const [bookmark, setBookmark] = useState(isBookmarked);
 
-  const {
-    mutate,
-    isPending: isBookmarkPending,
-    bookmarkError,
-  } = useMutation({
+  /* BUG: Use optimistic updates */
+
+  const { mutate, isPending, isError } = useMutation({
     mutationFn: addBookmark,
     onSuccess: () => {
       setBookmark((prevState) => !prevState);
+      queryClient.invalidateQueries({
+        queryKey: ["bookmarkedNews"],
+      });
     },
   });
 
@@ -58,6 +59,7 @@ const HorizontalNewsItem = ({ newsItem }) => {
         </div>
         <NewsContent id={id} title={title} text={text} image={image} />
       </div>
+      {isError && <ErrorMessage refreshButton={true} />}
     </>
   );
 };

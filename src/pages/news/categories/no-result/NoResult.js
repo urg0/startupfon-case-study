@@ -1,13 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import { getIconPath } from "@utils/navigation.service";
+import { ReactSVG } from "react-svg";
 
 import Button from "@components/ui/button/Button";
-
-import { ReactSVG } from "react-svg";
 
 import "@pages/news/categories/no-result/NoResult.scss";
 
 const NoResult = ({ category }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="no-results-container">
       <ReactSVG src={getIconPath("computer-dead")} className="error-icon" />
