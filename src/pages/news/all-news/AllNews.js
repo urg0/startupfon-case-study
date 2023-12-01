@@ -7,17 +7,22 @@ import { ReactSVG } from "react-svg";
 
 import Title from "@components/ui/title/Title";
 import HorizontalNewsItem from "@components/news/news-item/HorizontalNewsItem";
+import SearchNoResult from "@components/news/search-no-result/SearchNoResult";
+import SkeletonNew from "@components/ui/skeleton/SkeletonNew";
+import ErrorMessage from "@components/ui/error/ErrorMessage";
 
 import AppIcons from "@root/constants/assetManager/AppIcons";
 
 import "@pages/news/all-news/AllNews.scss";
-import SearchNoResult from "@components/news/search-no-result/SearchNoResult";
-import SkeletonNew from "@components/ui/skeleton/SkeletonNew";
 
 const SearchIcon = AppIcons.GetIcon("search");
 
 const AllNews = () => {
-  const { data: allNews, isPending } = useQuery({
+  const {
+    data: allNews,
+    isPending,
+    isError,
+  } = useQuery({
     queryKey: ["news"],
     queryFn: () => fetchData(eventsUrl),
   });
@@ -78,6 +83,7 @@ const AllNews = () => {
         )}
         {isPending &&
           Array.from({ length: 4 }, (_, index) => <SkeletonNew key={index} />)}
+        {isError && <ErrorMessage refreshButton={true} />}
       </div>
     </div>
   );

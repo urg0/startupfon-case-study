@@ -7,11 +7,16 @@ import Title from "@components/ui/title/Title";
 import HorizontalNewsItem from "@components/news/news-item/HorizontalNewsItem";
 import NoBookmarksMessage from "./no-bookmarks-message/NoBookmarksMessage";
 import SkeletonNew from "@components/ui/skeleton/SkeletonNew";
+import ErrorMessage from "@components/ui/error/ErrorMessage";
 
 import "@pages/bookmarks/Bookmarks.scss";
 
 const Bookmarks = () => {
-  const { data: allNews, isPending } = useQuery({
+  const {
+    data: allNews,
+    isPending,
+    isError,
+  } = useQuery({
     queryKey: ["bookmarkedNews"],
     queryFn: () => fetchData(eventsUrl),
   });
@@ -31,6 +36,7 @@ const Bookmarks = () => {
         {bookmarkedNews?.length === 0 && <NoBookmarksMessage />}
         {isPending &&
           Array.from({ length: 4 }, (_, index) => <SkeletonNew key={index} />)}
+        {isError && <ErrorMessage refreshButton={true} />}
       </div>
     </div>
   );
