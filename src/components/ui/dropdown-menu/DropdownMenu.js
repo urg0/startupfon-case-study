@@ -26,6 +26,7 @@ const DropdownMenu = () => {
       <ul className="navigation-list">
         {USER_DROPDOWN_MENU_LINKS.map((item) => (
           <li key={item.title} className="navigation-item">
+            {/* NOTE: Commented out bc feature is not implemented. */}
             <Link /* to={item.path} */ className="user-link">
               <ReactSVG
                 className="link-icon"

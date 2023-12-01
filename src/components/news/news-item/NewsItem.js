@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/* import React, { useState } from "react";
 
 import { dateFormatter } from "@utils/utils.service";
 
@@ -42,3 +42,4 @@ const NewsItem = (newsItem) => {
 };
 
 export default NewsItem;
+ */
