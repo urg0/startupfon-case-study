@@ -19,3 +19,13 @@
 .light {
   /* background-color: #f8f5ed; */
 }
+
+@media screen and (max-width: 1100px) {
+  .root-page-container {
+    flex-direction: row;
+    height: 100vh;
+    .footer {
+      display: none;
+    }
+  }
+}

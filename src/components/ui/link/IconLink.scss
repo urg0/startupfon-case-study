@@ -38,3 +38,10 @@
 .bookmark-icon {
   stroke: #202020;
 }
+
+@media screen and (max-width: 1300px) {
+  .link,
+  .link-active {
+    font-size: 10px;
+  }
+}

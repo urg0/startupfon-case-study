@@ -25,3 +25,14 @@
     }
   }
 }
+
+@media screen and (max-width: 1300px) {
+  .top-bar-user-container {
+    .user-wrapper {
+      .user-profile-photo {
+        width: 40px;
+        font-size: 10px;
+      }
+    }
+  }
+}
