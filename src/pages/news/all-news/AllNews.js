@@ -27,8 +27,10 @@ const AllNews = () => {
     queryFn: () => fetchData(eventsUrl),
   });
 
-  const [searchInput, setSearchInput] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
+  const [searchInput, setSearchInput] = useState(
+    searchParams.get("search") || ""
+  );
 
   const searchInputChangeHandler = (event) => {
     setSearchInput(event.target.value);
